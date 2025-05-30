@@ -7,9 +7,9 @@
     <title>Document</title>
   </head>
   <body class="w-full h-full">
-    <header class="w-full bg-blue-600 text-white">
-      <nav class="flex w-full justify-between p-4">
-        <button>
+    <header class="w-full bg-blue-600 text-white flex flex-col items-center">
+      <nav class="flex w-full justify-between items-center p-4">
+        <button class="md:hidden">
           <svg
             class="w-7 h-7"
             aria-hidden="true"
@@ -27,8 +27,21 @@
             />
           </svg>
         </button>
-        <h1 class="text-2xl font-semibold">la libreria de Nefi</h1>
-        <button>
+        <ul class="hidden md:flex md:order-2 md:gap-5">
+          <li class="hover:bg-white hover:text-blue-600 p-2 rounded-2xl">
+            categorias
+          </li>
+          <li class="hover:bg-white hover:text-blue-600 p-2 rounded-2xl">
+            estrenos
+          </li>
+          <li class="hover:bg-white hover:text-blue-600 p-2 rounded-2xl">
+            agotados
+          </li>
+        </ul>
+        <h1 class="text-2xl font-semibold md:order-1">la libreria de Nefi</h1>
+        <button
+          class="flex flex-col items-center justify-center gap-2.5 md:order-3"
+        >
           <svg
             class="w-7 h-7"
             aria-hidden="true"
@@ -46,9 +59,10 @@
               d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
             />
           </svg>
+          <h2 class="hidden md:block">saldo: $100.50</h2>
         </button>
       </nav>
-      <div class="flex items-center justify-center p-5">
+      <div class="flex items-center justify-center p-5 md:hidden">
         <div
           class="flex border border-gray-300 rounded-2xl px-5 py-2 bg-white w-full justify-between"
         >
@@ -76,10 +90,12 @@
         </div>
       </div>
     </header>
-    <main>
-      <div class="w-full">
+    <main class="flex flex-col md:flex-row">
+      <div
+        class="contenedor-banner w-full flex flex-col gap-10 md:order-2 md:w-[45%] md:p-4"
+      >
         <div
-          class="bg-gray-400 w-full overflow-hidden p-5 flex items-center justify-between"
+          class="bg-gray-400 w-full overflow-hidden p-5 flex items-center justify-between md:h-[35%] md:bg-white"
         >
           <div class="w-[10%]">
             <svg
@@ -102,7 +118,12 @@
           <img
             src="https://s3.amazonaws.com/rtvc-assets-misenal.tv/ms-public/styles/convertir_webp/public/2024-09/El%20principito%20y%20el%20zorro%20amistad.jpg.webp"
             alt=""
-            class="object-center object-cover w-[80%]"
+            class="object-center object-cover w-[80%] md:size-56 md:rounded-full"
+          />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK0rLqZfvcqCGiOs2YNoxyqsKh54IOz8gf1Q&s"
+            alt=""
+            class="object-center object-cover hidden w-[80%] md:size-56 md:rounded-full"
           />
           <div class="w-[10%]">
             <svg
@@ -122,8 +143,18 @@
             </svg>
           </div>
         </div>
+        <div class="contenido-banner hidden md:block">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum totam
+            ad voluptatem, voluptates maxime perferendis officia minima facere
+            corporis obcaecati illo, voluptatum ut, aut repudiandae eaque animi
+            illum ea voluptate?
+          </p>
+        </div>
       </div>
-      <div class="contenedor-card grid grid-cols-2 p-4 gap-4">
+      <div
+        class="contenedor-card grid grid-cols-2 p-4 gap-4 md:order-1 md:grid-cols-3 md:w-[55%]"
+      >
         <!-- card 1 -->
         <div
           class="card flex flex-col p-5 border border-cyan-500 rounded-2xl gap-3"
@@ -216,7 +247,7 @@
       </div>
     </main>
     <footer
-      class="bg-blue-600 text-white flex flex-col gap-7 justify-center p-4"
+      class="bg-blue-600 text-white flex flex-col gap-7 justify-center p-4 md:flex-row md:justify-between md:items-center md:h-[15%]"
     >
       <div class="w-full flex justify-center">
         <h2 class="text-2xl font-semibold">siguenos</h2>

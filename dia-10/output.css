@@ -42,12 +42,14 @@
     --color-blue-700: oklch(48.8% 0.243 264.376);
     --color-blue-800: oklch(42.4% 0.199 265.638);
     --color-blue-900: oklch(37.9% 0.146 265.522);
+    --color-violet-800: oklch(43.2% 0.232 292.759);
     --color-purple-500: oklch(62.7% 0.265 303.9);
     --color-purple-950: oklch(29.1% 0.149 302.717);
     --color-pink-500: oklch(65.6% 0.241 354.308);
     --color-slate-50: oklch(98.4% 0.003 247.858);
     --color-slate-200: oklch(92.9% 0.013 255.508);
     --color-slate-500: oklch(55.4% 0.046 257.417);
+    --color-slate-600: oklch(44.6% 0.043 257.281);
     --color-slate-700: oklch(37.2% 0.044 257.287);
     --color-slate-800: oklch(27.9% 0.041 260.031);
     --color-slate-900: oklch(20.8% 0.042 265.755);
@@ -413,6 +415,9 @@
   .h-7 {
     height: calc(var(--spacing) * 7);
   }
+  .h-8 {
+    height: calc(var(--spacing) * 8);
+  }
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
@@ -481,6 +486,9 @@
   }
   .w-7 {
     width: calc(var(--spacing) * 7);
+  }
+  .w-8 {
+    width: calc(var(--spacing) * 8);
   }
   .w-10 {
     width: calc(var(--spacing) * 10);
@@ -607,6 +615,13 @@
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-x-3 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 3) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
   .overflow-hidden {
@@ -1467,6 +1482,11 @@
       background-color: var(--color-green-800);
     }
   }
+  .md\:bg-transparent {
+    @media (width >= 48rem) {
+      background-color: transparent;
+    }
+  }
   .md\:bg-white {
     @media (width >= 48rem) {
       background-color: var(--color-white);
@@ -1525,6 +1545,23 @@
       flex-direction: row;
     }
   }
+  .rtl\:space-x-reverse {
+    &:where(:dir(rtl), [dir="rtl"], [dir="rtl"] *) {
+      :where(& > :not(:last-child)) {
+        --tw-space-x-reverse: 1;
+      }
+    }
+  }
+  .dark\:block {
+    &:where(.dark, .dark *) {
+      display: block;
+    }
+  }
+  .dark\:hidden {
+    &:where(.dark, .dark *) {
+      display: none;
+    }
+  }
   .dark\:border-gray-600 {
     &:where(.dark, .dark *) {
       border-color: var(--color-gray-600);
@@ -1570,9 +1607,19 @@
       background-color: var(--color-slate-500);
     }
   }
+  .dark\:bg-slate-600 {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-slate-600);
+    }
+  }
   .dark\:bg-slate-800 {
     &:where(.dark, .dark *) {
       background-color: var(--color-slate-800);
+    }
+  }
+  .dark\:bg-violet-800 {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-violet-800);
     }
   }
   .dark\:bg-white {
@@ -1785,6 +1832,11 @@
   inherits: false;
   initial-value: 0;
 }
+@property --tw-space-x-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -1912,6 +1964,7 @@
       --tw-skew-x: initial;
       --tw-skew-y: initial;
       --tw-space-y-reverse: 0;
+      --tw-space-x-reverse: 0;
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-shadow: 0 0 #0000;

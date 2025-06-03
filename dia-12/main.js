@@ -82,3 +82,74 @@ if (edadDisco >= 18) {
 // 9. Comprueba si dos strings son iguales
 
 // 10. Comprueba si dos strings tienen la misma longitud
+
+/* let resultado = "hola mundo y kevin";
+
+let respuesta = "hola mundo y" + " kevin";
+
+console.log(respuesta.length);
+
+console.log(respuesta[0], respuesta[respuesta.length - 1]);
+
+console.log(respuesta.toLowerCase());
+console.log(respuesta.toUpperCase());
+
+let cadenaLarga = `kevin
+alan
+jeff
+johan`;
+
+console.log(respuesta.includes("mundo"));
+
+console.log(respuesta === resultado);
+console.log(respuesta.length === resultado.length); */
+
+let dia = 1;
+let diaResultado;
+
+switch (dia) {
+  case 1:
+    console.log("lunes");
+    break;
+  case 2:
+    console.log("martes");
+    break;
+  case 3:
+    console.log("miercoles");
+    break;
+  case 4:
+    console.log("jueves");
+    break;
+  case 5:
+    console.log("viernes");
+    break;
+  case 6:
+    console.log("sabado");
+    break;
+  case 7:
+    console.log("domingo");
+    break;
+  default:
+    console.log("error el numero no esta dentro de los parametros");
+}
+
+/* EJERCICIOS CONDICIONALES */
+
+// 1. Imprime por consola tu nombre si una variable toma su valor
+
+// 2. Imprime por consola un mensaje si el usuario y contraseña concide con unos establecidos
+
+// 3. Verifica si un número es positivo, negativo o cero e imprime un mensaje
+
+// 4. Verifica si una persona puede votar o no (mayor o igual a 18) e indica cuántos años le faltan
+
+// 5. Usa el operador ternario para asignar el valor "adulto" o "menor" a una variable
+//    dependiendo de la edad
+
+// switch
+
+// 6. Muestra en que estación del año nos encontramos dependiendo del valor de una variable "mes"
+
+// 7. Muestra el número de días que tiene un mes dependiendo de la variable del ejercicio anterior
+
+// 8. Usa un switch para imprimir un mensaje de saludo diferente dependiendo del idioma

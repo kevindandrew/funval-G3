@@ -98,25 +98,25 @@ LOS FACTORIALES DE UN NUMERO
 
 /* DECLARAR UNA FUNCION */
 
-function duplicar(numero) {
+/* function duplicar(numero) {
   let resultado = 0;
   resultado = numero * 2;
   return resultado;
-}
+} */
 /* el codigo sera reutilizable?
     el codigo maneja su propia logica?
     q taanto alcance tendra mi funcion?
 */
 /* como llamamos una funcion */
-console.log(duplicar(5));
+/* console.log(duplicar(5));
 console.log(duplicar(33));
-console.log(duplicar(77));
+console.log(duplicar(77)); */
 /* invertir un string y eliminar los espacios  "kevin rodriguez " "zeugirdoznivek" 
     funcion para eliminar los espacios de un string
     funcion para invertir los elementos de un string
 */
 
-function eliminaEspacios(cadena) {
+/* function eliminaEspacios(cadena) {
   let resultado = "";
   for (let i = 0; i < cadena.length; i++) {
     if (cadena[i] !== " ") {
@@ -126,4 +126,72 @@ function eliminaEspacios(cadena) {
   return resultado;
 }
 
-console.log(eliminaEspacios("kevin rodr igu ez"));
+console.log(eliminaEspacios("kevin rodr igu ez")); */
+
+/* ejercicios BUCLES */
+/* 
+    WHILE
+1 Contar del 1 al 10:
+2 Sumar los primeros 5 números:
+    DO WHILE
+3 Pedir un número hasta que el usuario escriba 0:
+4 Pedir al usuario una contraseña hasta que acierte:
+6 Leer números hasta que se escriba uno negativo:
+    FOR
+5 Contar hacia atrás del 5 al 1:
+7 Mostrar los números pares del 1 al 20:
+8 Mostrar la tabla del 5:
+9 Contar de 10 a 1:
+
+*/
+/* 
+let numeroInicial = 1;
+
+while (numeroInicial <= 10) {
+  console.log(numeroInicial);
+  numeroInicial++;
+}
+
+numeroInicial = 0;
+resultado = 0;
+
+while (numeroInicial <= 5) {
+  resultado = resultado + numeroInicial;
+  numeroInicial++;
+}
+console.log(resultado); */
+
+/* do while ejercicios */
+/* let swich = true;
+do {
+  let datoUsuario = parseInt(prompt("ingresa un numero"));
+  if (datoUsuario === 0) {
+    swich = false;
+  }
+} while (swich);
+alert("lograste salir de la matrix"); */
+
+/* ejercicio contraseña correcta */
+/* let swich = true;
+do {
+  let contraseña = prompt("ingresa tu contraseña");
+  let contraseñaHasheada = "chanchito feliz";
+  if (contraseña === contraseñaHasheada) {
+    swich = false;
+  } else {
+    swich = true;
+  }
+} while (swich);
+
+alert("FELICIDADES CONTRASEÑA CORRECTA"); */
+
+//5 Contar hacia atrás del 5 al 1:
+
+let numero = 5;
+
+for (let index = 5; index >= 1; index--) {
+  console.log(numero);
+  numero--;
+}
+
+//6 Leer números hasta que se escriba uno negativo:

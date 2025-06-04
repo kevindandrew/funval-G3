@@ -63,5 +63,13 @@ for (let j = 1; j <= numeroX; j++) {
 
     x=5
     5,10,15,20,25
+*/
 
+/* 
+    quiero q realicen una calculadora de exponentes sin utilizar **
+    piden 2 numeros al usuario 1ro sera el q deberan multiplicar reiteradas veces>
+    y el 2do sera la cantidad de veces q sera iterado
+
+    5**2= 5*5=25
+    2**3= 2*2*2=8
 */

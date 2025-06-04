@@ -187,11 +187,36 @@ alert("FELICIDADES CONTRASEÑA CORRECTA"); */
 
 //5 Contar hacia atrás del 5 al 1:
 
-let numero = 5;
+/* let numero = 5;
 
 for (let index = 5; index >= 1; index--) {
   console.log(numero);
   numero--;
+} */
+
+/* ejercicios de funciones  */
+
+function saludar() {
+  console.log("hola amigos bienvenidos a este curso de JS");
 }
 
-//6 Leer números hasta que se escriba uno negativo:
+saludar();
+
+/* ejemplo con párametros */
+
+function saludarNombre(nombre) {
+  console.log("hola cm estas " + nombre + " querido amigo");
+}
+
+saludarNombre("Kevin");
+saludarNombre("Thomas");
+saludarNombre("Alan");
+
+/* ejemplo con mas de 1 parametro */
+function sumarVariables(a, b, c) {
+  let resultado = 0;
+  resultado = a + b + c;
+  console.log(resultado);
+}
+
+sumarVariables(322, 2, 80);

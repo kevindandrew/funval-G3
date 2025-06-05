@@ -218,5 +218,3 @@ function sumarVariables(a, b, c) {
   resultado = a + b + c;
   console.log(resultado);
 }
-
-sumarVariables(322, 2, 80);

@@ -158,3 +158,25 @@ let estudiantes = [
     notas: [31, 30, 12, 51, 77],
   },
 ];
+function calcularPromedio(notas) {
+  let promedio = 0;
+  for (let index = 0; index < notas.length; index++) {
+    promedio = promedio + notas[index];
+  }
+  promedio = promedio / notas.length;
+  return promedio;
+}
+
+for (let index = 0; index < estudiantes.length; index++) {
+  let estudiantePromedio = calcularPromedio(estudiantes[index].notas);
+  if (estudiantePromedio >= 51) {
+    console.log(
+      "estudiante " +
+        estudiantes[index].nombre +
+        " aprobado con un promedio de: " +
+        estudiantePromedio
+    );
+  }
+}
+
+/* del array de estudiantes mostrar a todos los estudiantes que pertenezcan al pais de argentina */

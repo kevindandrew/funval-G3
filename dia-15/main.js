@@ -8,7 +8,7 @@ let imagen = document.querySelector("#imagen-jesucristo");
 
 titulo.textContent = "Hola estudiantes de funval";
 
-contendor.innerHTML = "<p>hola kevin ya te recuperaste?</p>";
+/* contendor.innerHTML = "<p>hola kevin ya te recuperaste?</p>"; */
 
 /* modificadores de atributos y clases */
 /* atributos */
@@ -53,3 +53,47 @@ for (let i = 1; i <= 5; i++) {
 `;
 }
  */
+/* let frutas = [
+  "manzana",
+  "pera",
+  "papaya",
+  "mandarinas",
+  "banana",
+  "naranjas",
+  "kiwi",
+  "chirimoya",
+];
+let lista = document.querySelector(".lista");
+for (let j = 0; j < frutas.length; j++) {
+  lista.innerHTML += `<li>${frutas[j]}</li>`;
+}
+
+lista.innerHTML = "<li>manzana</li>"; */
+
+let estudiantes = [
+  {
+    nombre: "Felipe",
+    edad: 33,
+    pais: "Chile",
+  },
+  {
+    nombre: "Pablo",
+    edad: 28,
+    pais: "Argentina",
+  },
+  {
+    nombre: "Juana",
+    edad: 22,
+    pais: "Chile",
+  },
+  {
+    nombre: "Mahonri",
+    edad: 18,
+    pais: "Guatemala",
+  },
+  {
+    nombre: "Carlo",
+    edad: 50,
+    pais: "Peru",
+  },
+];

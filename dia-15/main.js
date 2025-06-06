@@ -96,4 +96,19 @@ let estudiantes = [
     edad: 50,
     pais: "Peru",
   },
+  {
+    nombre: "Thomas",
+    edad: 33,
+    pais: "Argentina",
+  },
 ];
+
+let tabla = document.querySelector(".contenido-tabla");
+
+for (let i = 0; i < estudiantes.length; i++) {
+  tabla.innerHTML += `<tr>
+            <td>${estudiantes[i].nombre}</td>
+            <td>${estudiantes[i].edad}</td>
+            <td>${estudiantes[i].pais}</td>
+          </tr>`;
+}

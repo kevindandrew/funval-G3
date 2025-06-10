@@ -7,7 +7,7 @@ btn.addEventListener("click", function (evento) {
 });
  */
 
-let btn = document.querySelector("#btn");
+/* let btn = document.querySelector("#btn");
 let img = document.querySelector("#imagen");
 let dia = true;
 
@@ -26,4 +26,15 @@ btn.addEventListener("click", function () {
       "https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Princess_Fiona.png/130px-Princess_Fiona.png"
     );
   }
+}); */
+
+let formulario = document.querySelector("#formulario");
+
+formulario.addEventListener("submit", function (evento) {
+  evento.preventDefault();
+  const formularioData = new FormData(formulario);
+
+  let nombreInput = formularioData.get("nombre");
+  let edadInput = formularioData.get("edad");
+  console.log("hola amigo " + nombreInput + " edad: " + edadInput);
 });

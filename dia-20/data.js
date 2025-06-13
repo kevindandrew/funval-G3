@@ -18,6 +18,12 @@ let cliente = [
     compras: [4, 2, 8, 10, 12, 5, 2],
   },
   {
+    nombre: "Luis",
+    edad: 28,
+    correo: "kevin123@gmail.com",
+    compras: [3],
+  },
+  {
     nombre: "Kevin",
     edad: 28,
     correo: "kevin123@gmail.com",

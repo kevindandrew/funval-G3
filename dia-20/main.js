@@ -12,3 +12,7 @@ let lista = document.querySelector("#lista-clientes");
 for (let i = 0; i < cliente.length; i++) {
   renderizar(cliente[i], lista);
 }
+
+/* renderizar el cliente completo 
+funcion para traer solo a los clientes q hayan realizado mas de una compra
+*/

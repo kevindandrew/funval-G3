@@ -69,7 +69,7 @@ Actualiza información de un usuario.
 
 Filtra usuarios por rol.
 
-Usa desestructuración y spread en todo momento.
+Usa desestructuración y propagacion en todo momento.
 
 Tareas a resolver
 1. Mostrar todos los usuarios (usa desestructuración)
@@ -81,7 +81,7 @@ Crea una función agregarUsuario(lista, nuevo) que devuelva una nueva lista con 
 3. Actualizar un usuario por ID (usa spread)
 Crea una función actualizarUsuario(lista, id, nuevosDatos) que:
 
-Busque al usuario por id.
+4.Busque al usuario por id.
 
 Devuelva una nueva lista con los datos actualizados del usuario.
 
@@ -91,3 +91,5 @@ const usuarios = [
   { id: 2, nombre: "Luis", rol: "editor", edad: 34 },
   { id: 3, nombre: "Carla", rol: "viewer", edad: 22 },
 ];
+
+export { usuarios };

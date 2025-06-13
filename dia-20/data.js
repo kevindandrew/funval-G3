@@ -20,7 +20,7 @@ let cliente = [
   {
     nombre: "Luis",
     edad: 28,
-    correo: "kevin123@gmail.com",
+    correo: "Luis123@gmail.com",
     compras: [3],
   },
   {

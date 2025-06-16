@@ -83,8 +83,47 @@ superSaludo("PEPITO", saludar);
 
 superSaludo("KEVIN", despedida);
 
-let notas = [0, 10, 34];
+let notas = [0, 10, 64, 99];
 
+/* forEach */
 notas.forEach((nota) => {
   console.log(nota);
 });
+
+/* MAP */
+let notasDoble = notas.map((nota) => nota * 2);
+
+/* Filter */
+let notasAprob = notas.filter((nota) => nota > 51);
+console.log(notasAprob);
+/* find */
+let notaEncontrada = notas.find((nota) => nota > 9);
+console.log(notaEncontrada);
+/* findIndex */
+let indice = notas.findIndex((nota) => nota > 300);
+console.log(indice);
+/* includes */
+let tiene = notas.includes("64");
+console.log(tiene);
+
+/* Fill */
+notas.fill(10, 1, 3); //modifica el array original
+console.log(notas);
+/* slice */
+let subnotas = notas.slice(0);
+
+let res = notas.map((nota) => nota * 3).filter((nota) => nota > 40);
+
+/* EJERCICIOS */
+
+const estudiantesFunval = [
+  { nombre: "Felipe", nota: 89 },
+  { nombre: "Thomas", nota: 34 },
+  { nombre: "Pablo", nota: 77 },
+  { nombre: "woodleine", nota: 68 },
+  { nombre: "Mahonri", nota: 23 },
+];
+/* extraer los nombres solo de los estudiantes aprobados y mostrarlos en mayusculas 
+se consideran apribados los estudiantes con nota arriba de 76
+*/
+//FELIPE----PABLO------ ESTA PROHIBIDO USAR FOR

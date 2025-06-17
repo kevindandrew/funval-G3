@@ -127,3 +127,105 @@ const estudiantesFunval = [
 se consideran apribados los estudiantes con nota arriba de 76
 */
 //FELIPE----PABLO------ ESTA PROHIBIDO USAR FOR
+
+const estudiantesFunval2 = [
+  { nombre: "Lucía Gómez", pais: "Argentina", edad: 20, notas: [8, 7, 9, 10] },
+  { nombre: "Mateo Rojas", pais: "México", edad: 22, notas: [6, 8, 7] },
+  {
+    nombre: "Valentina Pérez",
+    pais: "Chile",
+    edad: 21,
+    notas: [9, 9, 10, 10, 8],
+  },
+  { nombre: "Carlos Silva", pais: "Colombia", edad: 23, notas: [7, 6, 7] },
+  { nombre: "Sofía Torres", pais: "España", edad: 19, notas: [10, 9, 10] },
+  { nombre: "Andrés Castillo", pais: "Perú", edad: 24, notas: [5, 6, 7, 8] },
+  { nombre: "Camila Herrera", pais: "Uruguay", edad: 22, notas: [8, 9, 7] },
+  { nombre: "Juan López", pais: "Bolivia", edad: 20, notas: [6, 7, 6, 5] },
+  {
+    nombre: "Isabela Ramírez",
+    pais: "Ecuador",
+    edad: 21,
+    notas: [9, 8, 9, 10],
+  },
+  { nombre: "Tomás Díaz", pais: "Paraguay", edad: 23, notas: [6, 6, 7, 8] },
+  {
+    nombre: "Martina Aguilar",
+    pais: "Argentina",
+    edad: 20,
+    notas: [10, 10, 9],
+  },
+  { nombre: "Diego Méndez", pais: "México", edad: 24, notas: [5, 6, 7, 6] },
+  { nombre: "Paula Vargas", pais: "Colombia", edad: 22, notas: [8, 9, 10] },
+  { nombre: "Alejandro Núñez", pais: "Chile", edad: 21, notas: [7, 7, 6, 7] },
+  { nombre: "Fernanda Soto", pais: "España", edad: 19, notas: [10, 9, 10, 9] },
+];
+
+/* Obtener solo los nombres de los estudiantes:
+Crear un nuevo array con objetos que incluyan nombre y promedio de notas:D
+Filtrar estudiantes mayores de 21 años:D
+Filtrar estudiantes con promedio mayor o igual a 8:D
+Imprimir el nombre y país de cada estudiante:D
+Imprimir todos los promedios (sin guardar):D
+Encontrar al primer estudiante de México:D
+Encontrar al estudiante que se llama "Paula Vargas":D
+Buscar el índice del estudiante llamado "Tomás Díaz":D
+Verificar si el país "Brasil" está en la lista de países de los estudiantes:
+Obtener nombres de estudiantes que tengan al menos una nota menor a 6:
+Contar cuántos estudiantes son de Argentina:
+Ordenar estudiantes por edad de menor a mayor:
+mostrar el pais q tiene mayor cantidad de estudiantes aprobados
+*/
+
+function promedioNotas(arrayNotas) {
+  const valorInicial = 0;
+  let promedio = arrayNotas.reduce((acumulador, valorActual) => {
+    return acumulador + valorActual;
+  }, valorInicial);
+  promedio = promedio / arrayNotas.length;
+  return promedio;
+}
+
+let nuevoArray = estudiantesFunval2.map((estudiante) => {
+  let obj = {};
+  obj.nombre = estudiante.nombre;
+  obj.promedio = promedioNotas(estudiante.notas).toFixed(1);
+  return obj;
+});
+
+//console.log(nuevoArray);
+
+let arrayMayores = estudiantesFunval2.filter(
+  (estudiante) => estudiante.edad > 21
+);
+//console.log(arrayMayores);
+
+let estudianteReconocido = nuevoArray.filter((estudiante) => {
+  return estudiante.promedio >= 8;
+});
+//console.log(estudianteReconocido);
+
+estudiantesFunval2.forEach((estudiante) => {
+  console.log("nombre: " + estudiante.nombre + " pais: " + estudiante.pais);
+});
+
+nuevoArray.forEach((estudiante) => {
+  console.log(estudiante.promedio);
+});
+
+let Luis = estudiantesFunval2.find((estudiante) => {
+  return estudiante.pais === "México";
+});
+
+let estudianteP = estudiantesFunval2.find((estudiante) => {
+  return estudiante.nombre === "Paula Vargas";
+});
+
+let indiceEestudainte = estudiantesFunval2.findIndex((estudiante) => {
+  return estudiante.nombre === "Tomás Díaz";
+});
+
+let numeros = [1, 100, 25, 10];
+numeros.sort((a, b) => b - a);
+/* numeros.reverse(); */
+console.log(numeros); // [1, 10, 25, 100]

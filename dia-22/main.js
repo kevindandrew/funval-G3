@@ -7,7 +7,7 @@ console.log("4 hacemos lectura de libro de mormon");
 console.log("5 entramos a clases");
  */
 /* CODIGO ASINCRONO */
-
+/* 
 console.log("1 pedir una pizza");
 
 setTimeout(() => {
@@ -19,7 +19,7 @@ setTimeout(() => {
   console.log("4 te fuiste a lavar los platos ");
 }, 4000);
 console.log("5 alistar la mesa");
-
+ */
 /* PROMESAS */
 
 /* let datos = [
@@ -62,20 +62,37 @@ let datos = [
     edad: 28,
   },
 ];
-
+/* ella me prometio esperarme 2 años */
 function traerDatos() {
-  let exito = false;
+  let exito = true;
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (exito) {
         resolve(datos);
       } else {
-        reject("code :422 error con la peticion ");
+        reject("me mando el querido Juan");
       }
-    }, 3000);
+    }, 7000);
   });
 }
-
+let lista = document.querySelector("#listado");
+lista.innerHTML = `
+<div role="status" class="max-w-sm animate-pulse">
+    <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+    <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"></div>
+    <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+    <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[330px] mb-2.5"></div>
+    <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[300px] mb-2.5"></div>
+    <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
+    <span class="sr-only">Loading...</span>
+</div>
+`;
 traerDatos()
-  .then((datos) => console.log(datos))
+  .then((datos) => {
+    lista.innerHTML = "";
+    datos.forEach((estudiante) => {
+      lista.innerHTML += `<li><p>nombre: ${estudiante.nombre}</p>
+      <p>edad:${estudiante.edad}</p></li>`;
+    });
+  })
   .catch((err) => console.log(err));

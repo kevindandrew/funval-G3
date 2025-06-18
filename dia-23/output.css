@@ -522,6 +522,9 @@
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
+  .h-44 {
+    height: calc(var(--spacing) * 44);
+  }
   .h-48 {
     height: calc(var(--spacing) * 48);
   }
@@ -566,6 +569,9 @@
   }
   .h-\[100\%\] {
     height: 100%;
+  }
+  .h-auto {
+    height: auto;
   }
   .h-full {
     height: 100%;

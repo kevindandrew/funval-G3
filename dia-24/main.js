@@ -101,7 +101,7 @@ async function renderizarTipos() {
     listaTipos.innerHTML += ` <li>
               <a
                 href="#"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                class="btn-tipo block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >${tipo.name}</a
               >
             </li>`;
@@ -119,3 +119,25 @@ btn.addEventListener("click", function (e) {
 /* darle funcionalidad al dropdwn y filtrar a los pokemon de dicho tipo 
 si le da a tipo fuego deberan aparecer todos los pokemon de tipo fuego si le da a tipo agua solo pokemon
 tipo agua deberan aparecer ademas el drpdwn debera cerrarse cuando se selecione una opcion  */
+
+listaTipos.addEventListener("click", async function (e) {
+  let arrayDefinivo = [];
+  if (e.target.classList.contains("btn-tipo")) {
+    console.log(e.target.textContent);
+    menu.classList.toggle("hidden");
+    let arrayNuevo = [];
+    let { data } = await axios.get(
+      `https://pokeapi.co/api/v2/type/${e.target.textContent}/`
+    );
+    for (let j = 0; j <= 11; j++) {
+      arrayNuevo.push(data.pokemon[j]);
+    }
+    for (let k = 0; k < arrayNuevo.length; k++) {
+      console.log(arrayNuevo[k].pokemon.url);
+      let infoPok = await axios.get(arrayNuevo[k].pokemon.url);
+      arrayDefinivo.push(infoPok.data);
+      console.log(arrayDefinivo);
+      renderizarPokes(arrayDefinivo);
+    }
+  }
+});

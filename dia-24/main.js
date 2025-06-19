@@ -110,3 +110,7 @@ let menu = document.querySelector("#dropdown");
 btn.addEventListener("click", function (e) {
   menu.classList.toggle("hidden");
 });
+
+/* darle funcionalidad al dropdwn y filtrar a los pokemon de dicho tipo 
+si le da a tipo fuego deberan aparecer todos los pokemon de tipo fuego si le da a tipo agua solo pokemon
+tipo agua deberan aparecer ademas el drpdwn debera cerrarse cuando se selecione una opcion  */

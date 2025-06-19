@@ -85,3 +85,28 @@ ant.addEventListener("click", function (e) {
     traerPokemons(pokeNumeros);
   }
 });
+
+let listaTipos = document.querySelector("#listado-clases");
+
+async function renderizarTipos() {
+  listaTipos.innerHTML = "";
+  let { data } = await axios.get("https://pokeapi.co/api/v2/type/");
+  let arrayTipos = data.results;
+  arrayTipos.forEach((tipo) => {
+    listaTipos.innerHTML += ` <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >${tipo.name}</a
+              >
+            </li>`;
+  });
+}
+
+renderizarTipos();
+
+let btn = document.querySelector("#boton-drop");
+let menu = document.querySelector("#dropdown");
+btn.addEventListener("click", function (e) {
+  menu.classList.toggle("hidden");
+});

@@ -5,7 +5,8 @@ async function traerPokemons(n) {
   try {
     pokemons = [];
     for (let i = n; i <= n + 11; i++) {
-      let { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`);
+      let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
+      let data = await res.json();
       pokemons.push(data);
       renderizarPokes(pokemons);
     }

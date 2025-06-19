@@ -20,7 +20,7 @@ traerDatosDogs().then((res) => {
     suggestions.push(raza);
   });
 });
-console.log(suggestions);
+
 let contenedor = document.querySelector("#contenedor");
 
 for (let i = 1; i <= 10; i++) {
@@ -66,7 +66,7 @@ input.addEventListener("input", function () {
             .then((data) => {
               let arrayPerritos = data.message;
               contenedor.innerHTML = "";
-              for (let j = 1; j <= 20; j++) {
+              for (let j = 1; j <= 40; j++) {
                 contenedor.innerHTML += `
                 <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4">
                     <img class="object-cover w-full rounded-t-lg h-44  md:w-48 md:rounded-none md:rounded-s-lg" src="${arrayPerritos[j]}" alt="">
@@ -96,3 +96,26 @@ document.addEventListener("click", function (event) {
     dropdown.classList.add("hidden");
   }
 });
+let perrillo = document.querySelector("#perrito");
+/* axios.get("https://dog.ceo/api/breeds/image/random").then((res) => {
+  perrillo.innerHTML += `  <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4">
+                    <img class="object-cover w-full rounded-t-lg h-44  md:w-48 md:rounded-none md:rounded-s-lg" src="${res.data.message}" alt="">
+                    <div class="flex flex-col justify-between p-4 leading-normal">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">perrito bonito perrito aleatorio</h5>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">adopta un perrito hoy :D</p>
+                    </div>
+                </a>`;
+}); */
+
+async function traerPerritoAleatorio() {
+  let datos = await axios.get("https://dog.ceo/api/breeds/image/random");
+  perrillo.innerHTML += `  <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4">
+                    <img class="object-cover w-full rounded-t-lg h-44  md:w-48 md:rounded-none md:rounded-s-lg" src="${datos.data.message}" alt="">
+                    <div class="flex flex-col justify-between p-4 leading-normal">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">perrito aleatorio</h5>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">adopta un perrito hoy :D</p>
+                    </div>
+                </a>`;
+}
+
+traerPerritoAleatorio();

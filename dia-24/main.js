@@ -2,11 +2,15 @@ let contenedor = document.querySelector("#contenedor-cards");
 let pokemons = [];
 
 async function traerPokemons(n) {
-  pokemons = [];
-  for (let i = n; i <= n + 11; i++) {
-    let { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`);
-    pokemons.push(data);
-    renderizarPokes(pokemons);
+  try {
+    pokemons = [];
+    for (let i = n; i <= n + 11; i++) {
+      let { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`);
+      pokemons.push(data);
+      renderizarPokes(pokemons);
+    }
+  } catch (error) {
+    console.log(error);
   }
 }
 traerPokemons(1);
